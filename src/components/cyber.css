@@ -1,0 +1,34 @@
+/* オーバーレイ（画面全体） */
+.overlay {
+  position: fixed;
+  top: 60px; /* ヘッダー高さ */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background: rgba(65, 65, 65, 0.05);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+}
+
+/* サイドバーリンク */
+.cyber-sidebar a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cyber-sidebar a:visited {
+  color: white;
+  font-weight: bold;
+}
+
+.cyber-sidebar a:hover {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.cyber-sidebar a:active {
+  color: white;
+  font-weight: bold;
+}
