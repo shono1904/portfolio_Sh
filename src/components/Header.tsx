@@ -1,13 +1,21 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./cyber.css";
 
 const HEADER_HEIGHT = 60;
+const HOME_HEADER_BACKGROUND = "rgba(255, 255, 255, 0)";
+const DEFAULT_HEADER_BACKGROUND = "#474646b1";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   const closeMenu = () => setOpen(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
 
   const overlayStyle: React.CSSProperties = {
     top: `${HEADER_HEIGHT}px`,
@@ -33,6 +41,21 @@ const Header = () => {
     transition: "transform 280ms ease",
   };
 
+  const headerStyle: React.CSSProperties = {
+    position: "fixed",
+    top: 0,
+    width: "100%",
+    height: `${HEADER_HEIGHT}px`,
+    background: isHome ? HOME_HEADER_BACKGROUND : DEFAULT_HEADER_BACKGROUND,
+    backdropFilter: "blur(3px)",
+    WebkitBackdropFilter: "blur(10px)",
+    display: "flex",
+    alignItems: "center",
+    boxSizing: "border-box",
+    padding: "0 20px",
+    zIndex: 1000
+  };
+
   return (
     <>
       <header className="cyber-header" style={headerStyle}>
@@ -55,7 +78,7 @@ const Header = () => {
         <h1 className="neon-text" style={{ margin: 0, marginLeft: "20px",
           color: "white",
          }}>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>Shono.mu</Link>
+          <Link to="/" onClick={closeMenu} style={{ color: "white", textDecoration: "none" }}>Shono.mu</Link>
         </h1>
       </header>
 
@@ -74,22 +97,6 @@ const Header = () => {
       </div>
     </>
   );
-};
-
-
-const headerStyle: React.CSSProperties = {
-  position: "fixed",
-  top: 0,
-  width: "100%",
-  height: `${HEADER_HEIGHT}px`,
-  background: "rgba(255, 255, 255, 0)", // 半透明
-  backdropFilter: "blur(3px)",       // 背景ぼかし
-  WebkitBackdropFilter: "blur(10px)", // Safari対応
-  display: "flex",
-  alignItems: "center",
-  boxSizing: "border-box",
-  padding: "0 20px",
-  zIndex: 1000
 };
 
 export default Header;
