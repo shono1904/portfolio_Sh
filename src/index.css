@@ -7,6 +7,20 @@ body {
   overflow-x: hidden;
 }
 
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+}
+
 /* サイバー背景グリッド */
 body::before {
   content: "";
@@ -18,4 +32,21 @@ body::before {
     linear-gradient(90deg, rgba(199, 199, 199, 0) 1px, transparent 1px);
   background-size: 40px 40px;
   z-index: -1;
+}
+
+.works-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.works-link:link p {
+  color: #ffffff;
+}
+
+.works-link:visited p {
+  color: #f1ff59;
+}
+
+.works-link:hover p {
+  color: #f1ff59;
 }

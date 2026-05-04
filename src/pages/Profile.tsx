@@ -5,10 +5,12 @@ const Profile = () => {
   const navigate = useNavigate();
 
   return (
+    <>
+    <title>Profile - Shono.mu</title>
     <div style={{padding: "8%"}}>
       <h1 style={{ margin: 0, display: "inline" }}>
         Profile
-        <span style={{ fontSize: "1rem", fontWeight: "normal" }}> / プロフィール</span>
+        <span style={{ fontSize: "1rem", fontWeight: "normal" }}> プロフィール</span>
       </h1>
       <hr style={hrstyle}/>
       <span style={{display:"block", height:"30px"}}/>
@@ -52,6 +54,13 @@ const Profile = () => {
             </button>
           </div>
           </div>
+      </div>
+      <hr style={hrstyle}/>
+      <div>
+        <h1>
+          Career
+        </h1>
+
       </div>
       <hr style={hrstyle}/>
       <div>
@@ -109,6 +118,7 @@ const Profile = () => {
         最近のマイブーム:Normal mapを作成してより立体感のある陰影を表現する
       </div>
     </div>
+    </>
   )
 }
 

@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import "./cyber.css";
 
 const HEADER_HEIGHT = 60;
-const HOME_HEADER_BACKGROUND = "rgba(255, 255, 255, 0)";
-const DEFAULT_HEADER_BACKGROUND = "#474646b1";
+const HOME_HEADER_BACKGROUND = "#474646b1"; // ホームページのヘッダーバックグラウンド
+const DEFAULT_HEADER_BACKGROUND = "#474646b1"; // その他のページのヘッダーバックグラウンド
 
 const Header = () => {
   const [open, setOpen] = useState(false);

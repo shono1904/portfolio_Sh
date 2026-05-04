@@ -5,7 +5,9 @@ import { OrbitControls, useAnimations, useFBX } from "@react-three/drei";
 import type { AnimationAction, AnimationClip, Group } from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 
-const MODEL_PATH = "/assets/models/kyoka/kyoka.fbx";
+// Use public/ path for FBX assets. Place the FBX at `public/assets/models/kyoka/Kyoka_share1.fbx`.
+// Loading from `public` avoids bundler asset transformations that can break FBX parsing.
+const MODEL_PATH = "/assets/models/kyoka/Kyoka_share1.fbx";
 const ANIMATION_PATHS: string[] = [];
 
 type ModelErrorBoundaryProps = {

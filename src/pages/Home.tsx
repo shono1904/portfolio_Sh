@@ -2,6 +2,8 @@ import ImageSlider from "../components/ImageSlider";
 
 const Home = () => {
   return (
+    <>
+    <title>Shono.mu</title>
     <div style={{ }}>
       <div style={{ position: "relative" }}>
         <ImageSlider />
@@ -20,6 +22,7 @@ const Home = () => {
         </h1>
       </div>
     </div>
+    </>
   );
 };
 

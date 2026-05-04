@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <footer style={footerStyle}>
       <p>© 2026 My Portfolio</p>
-      <a href="https://x.com/youraccount" target="_blank">
+      <a href="https://x.com/youraccount" target="_blank" rel="noreferrer">
         X
       </a>
     </footer>
@@ -15,7 +15,8 @@ const footerStyle: React.CSSProperties = {
   color: "#ffffff",
   textAlign: "center",
   padding: "20px",
-  marginTop: "-7px"
+  marginTop: "auto",
+  width: "100%"
 };
 
 export default Footer;
