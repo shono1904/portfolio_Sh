@@ -31,7 +31,7 @@ const Home = () => {
               padding: "24px",
               borderRadius: "16px",
               background: THEME_COLORS.cardBg,
-              backdropFilter: "blur(6px)",
+              backdropFilter: "blur(4px)",
               boxShadow: `0 8px 24px ${THEME_COLORS.shadowDark}`,
               outline: `1px solid ${THEME_COLORS.profile}`,
             }}
@@ -50,7 +50,7 @@ const Home = () => {
               padding: "24px",
               borderRadius: "16px",
               background: THEME_COLORS.cardBg,
-              backdropFilter: "blur(6px)",
+              backdropFilter: "blur(4px)",
               boxShadow: `0 8px 24px ${THEME_COLORS.shadowDark}`,
               outline: `1px solid ${THEME_COLORS.works}`,
             }}
@@ -69,7 +69,7 @@ const Home = () => {
               padding: "24px",
               borderRadius: "16px",
               background: THEME_COLORS.cardBg,
-              backdropFilter: "blur(6px)",
+              backdropFilter: "blur(4px)",
               boxShadow: `0 8px 24px ${THEME_COLORS.shadowDark}`,
               outline: `1px solid ${THEME_COLORS.models}`,
             }}
@@ -84,9 +84,10 @@ const Home = () => {
         </div>
         <h1
           style={{
+            fontSize: "48px",
             position: "absolute",
             top: `${window.innerHeight * (1/3)}px`,
-            left: `${window.innerWidth * (1/6)}px`,
+            left: `${window.innerWidth * (1/5)}px`,
             color: "white",
             transform: "translateX(-50%)",
             zIndex: 2,
