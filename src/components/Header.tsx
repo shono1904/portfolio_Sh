@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import "./cyber.css";
 
 const HEADER_HEIGHT = 60;
-const HOME_HEADER_BACKGROUND = "#474646b1"; // ホームページのヘッダーバックグラウンド
-const DEFAULT_HEADER_BACKGROUND = "#474646b1"; // その他のページのヘッダーバックグラウンド
+const HOME_HEADER_BACKGROUND = "#111120b1"; // ホームページのヘッダーバックグラウンド
+const DEFAULT_HEADER_BACKGROUND = "#111120b1"; // その他のページのヘッダーバックグラウンド
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -28,9 +28,9 @@ const Header = () => {
   const sidebarStyle: React.CSSProperties = {
     position: "fixed",
     left: 0,
-    top: "2px",
+    top: "0px",
     width: "200px",
-    background: "#474646b1",
+    background: "#111120b1",
     backdropFilter: "blur(3px)",
     height: `calc(100vh - ${HEADER_HEIGHT}px)`,
     display: "flex",
@@ -66,20 +66,26 @@ const Header = () => {
           aria-expanded={open}
           style={{
             background:"rgba(0,0,0,0)",
-            color: "white",
+            color: "black",
             border: "1px solid white",
             borderRadius: "15%",
             fontSize: "200%",
-            cursor: "pointer"
+            cursor: "pointer",
           }}
         >
           ☰
         </button>
-        <h1 className="neon-text" style={{ margin: 0, marginLeft: "20px",
+        <p className="neon-text" style={{ margin: 0, marginLeft: "20px",
           color: "white",
          }}>
-          <Link to="/" onClick={closeMenu} style={{ color: "white", textDecoration: "none" }}>Shono.mu</Link>
-        </h1>
+          <Link to="/" onClick={closeMenu} style={{ color: "black", textDecoration: "none"}}>
+          <p style={{fontSize: `${HEADER_HEIGHT * 0.7}px`, display: "inline-block", margin: 0}}>
+            狐っ娘
+          </p><p style={{fontSize: `${HEADER_HEIGHT * 0.4}px`, display: "inline-block", margin: 0}}>
+            研究室
+          </p>
+          </Link>
+        </p>
       </header>
 
       {/* オーバーレイ（背景クリック用） */}

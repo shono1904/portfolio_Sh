@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { worksData } from "../workData";
+import { worksData } from "./workData";
 
 const WorkDetail = () => {
   const { id } = useParams();
@@ -19,7 +19,7 @@ const WorkDetail = () => {
       <div style={{flex:1 , textAlign: "left" }}>
         <h2>作品名:{work.title}</h2>
         <br/>
-        <p style={{ marginTop: "16px", lineHeight: 1.7 }}>{work.description}</p>
+        <p style={{ marginTop: "16px", lineHeight: 1.7, whiteSpace: "pre-line" }}>{work.description}</p>
       </div>
       <div style={{flex: 3, display: "flex", justifyContent: "center", alignItems: "flex-start"}}>
         <img

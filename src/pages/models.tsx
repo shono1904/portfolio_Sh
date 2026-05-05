@@ -1,15 +1,32 @@
 import { Link } from "react-router-dom";
+import { THEME_COLORS } from "./themecolor";
+
+const publish = false; // 公開フラグ（true: 公開, false: 非公開）
 
 const Models = () => {
+  if(publish){
   return (
     <>
     <title>Models - Shono.mu</title>
-    <div style={{padding: "8%" }}>
-      <h2>Models</h2>
-      <hr style={{border: "none",borderTop: "3px solid #f1ff59",}}/>
+    <div style={{padding: "8%", maxWidth: `900px`, margin: "0 auto"}} >
+      <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>Models</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　3Dモデル一覧</p>
+      <hr style={{border: "none",borderTop: `3px solid ${THEME_COLORS.models}`,}}/>
       <span style={{display:"block", height:"10px"}}/>
       <p style={{ marginBottom: "16px" }}>3Dモデル一覧</p>
       <Link to="/models/kyoka">Kyoka</Link>
+    </div>
+    </>
+  );
+}
+
+  return (
+    <>
+    <title>Models - Shono.mu</title>
+    <div style={{padding: "8%", maxWidth: `900px`, margin: "0 auto"}} >
+      <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>Models</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　3Dモデル一覧</p>
+      <hr style={{border: "none",borderTop: `3px solid ${THEME_COLORS.models}`,}}/>
+      <span style={{display:"block", height:"10px"}}/>
+      <p style={{ marginBottom: "16px" }}>準備中...</p>
     </div>
     </>
   );

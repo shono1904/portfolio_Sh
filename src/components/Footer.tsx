@@ -2,16 +2,17 @@
 const Footer = () => {
   return (
     <footer style={footerStyle}>
-      <p>© 2026 My Portfolio</p>
-      <a href="https://x.com/youraccount" target="_blank" rel="noreferrer">
+      <a href="https://x.com/shono_digic" target="_blank" rel="noreferrer">
         X
       </a>
+      <hr style={{backgroundColor: "#ffffff", width: "90%"}}/>
+      <p>© 2026 S.Oyama</p>
     </footer>
   );
 };
 
 const footerStyle: React.CSSProperties = {
-  background: "#555555",
+  background: "#111120",
   color: "#ffffff",
   textAlign: "center",
   padding: "20px",

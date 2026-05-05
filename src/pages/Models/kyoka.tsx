@@ -1,14 +1,12 @@
 import { Component, Suspense, useEffect, useMemo, useRef } from "react";
 import type { ErrorInfo, ReactNode } from "react";
-import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls, useAnimations, useFBX } from "@react-three/drei";
-import type { AnimationAction, AnimationClip, Group } from "three";
-import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
+import type { AnimationAction } from "three";
 
-// Use public/ path for FBX assets. Place the FBX at `public/assets/models/kyoka/Kyoka_share1.fbx`.
-// Loading from `public` avoids bundler asset transformations that can break FBX parsing.
-const MODEL_PATH = "/assets/models/kyoka/Kyoka_share1.fbx";
-const ANIMATION_PATHS: string[] = [];
+// Use public/ path for GLB assets. Place the GLB at `public/assets/models/kyoka/Kyoka_share1.glb`.
+// GLB format is natively supported by Three.js and more stable than FBX.
+const MODEL_PATH = "/assets/models/kyoka/Kyoka_share1.glb";
 
 type ModelErrorBoundaryProps = {
   children: ReactNode;
@@ -40,34 +38,22 @@ class ModelErrorBoundary extends Component<ModelErrorBoundaryProps, ModelErrorBo
 }
 
 const KyokaModel = () => {
-  const model = useFBX(MODEL_PATH);
+  const { scene, animations } = useGLTF(MODEL_PATH);
   const transitionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const importedAnimationAssets = useLoader(FBXLoader, ANIMATION_PATHS) as Group[];
-  const animations = useMemo(() => {
-    const rawClips =
-      importedAnimationAssets.length > 0
-        ? importedAnimationAssets.flatMap((asset) => asset.animations)
-        : model.animations ?? [];
-
-    // useAnimations uses clip names as action keys, so ensure duplicates are uniquely renamed.
-    const clipNameCount = new Map<string, number>();
-    return rawClips.map((clip) => {
-      const nextCount = (clipNameCount.get(clip.name) ?? 0) + 1;
-      clipNameCount.set(clip.name, nextCount);
-
-      if (nextCount === 1) {
-        return clip;
-      }
-
-      const cloned = clip.clone() as AnimationClip;
-      cloned.name = `${clip.name}-${nextCount}`;
-      return cloned;
-    });
-  }, [importedAnimationAssets, model.animations]);
-  const { actions } = useAnimations(animations, model);
+  
+  // Log GLB load success for debugging
+  useEffect(() => {
+    console.log("GLB model loaded successfully:", scene, "animations:", animations);
+  }, [scene, animations]);
+  
+  const animationClips = useMemo(() => {
+    return animations || [];
+  }, [animations]);
+  
+  const { actions } = useAnimations(animationClips, scene);
 
   useEffect(() => {
-    model.traverse((node) => {
+    scene.traverse((node) => {
       if ("castShadow" in node) {
         node.castShadow = true;
       }
@@ -75,7 +61,7 @@ const KyokaModel = () => {
         node.receiveShadow = true;
       }
     });
-  }, [model]);
+  }, [scene]);
 
   useEffect(() => {
     const playableActions = Object.values(actions).filter((action): action is AnimationAction => Boolean(action));
@@ -120,7 +106,7 @@ const KyokaModel = () => {
     };
   }, [actions]);
 
-  return <primitive object={model} scale={0.01} position={[0, -1, 0]} />;
+  return <primitive object={scene} scale={0.01} position={[0, -1, 0]} />;
 };
 
 const Kyoka = () => {
@@ -148,8 +134,6 @@ const Kyoka = () => {
               FBXの読み込みに失敗しました。参照パスを確認してください。
               <br />
               model: {MODEL_PATH}
-              <br />
-              animations: {ANIMATION_PATHS.length > 0 ? ANIMATION_PATHS.join(", ") : "なし"}
             </div>
           }
         >
@@ -166,10 +150,10 @@ const Kyoka = () => {
       </div>
 
       <p style={{ marginTop: "14px", opacity: 0.8 }}>
-        配置先: public/assets/models/kyoka/kyoka.fbx
+        配置先: public/assets/models/kyoka/Kyoka_share1.glb
       </p>
       <p style={{ marginTop: "8px", opacity: 0.8 }}>
-        追加アニメーション: kyoka.tsx の ANIMATION_PATHS に FBX パスを複数指定
+        GLB形式のモデルを表示しています
       </p>
     </div>
   );
