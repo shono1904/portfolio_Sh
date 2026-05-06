@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { THEME_COLORS } from "../pages/themecolor";
+import { THEME_COLORS } from "../themecolor";
 
 type PageCardProps = {
   title: string;

@@ -1,7 +1,7 @@
-import suirosum from "./../workimage/suiro.webp";
-import towersum from "./../workimage/tower.webp";
-import suiro from "./suirodef.webp";
-import tower from "./towerdef.webp";
+import suirosum from "./../../../assets/images/works/suiro.webp";
+import towersum from "./../../../assets/images/works/tower.webp";
+import suiro from "./../../../assets/images/workdetails/suiro.webp";
+import tower from "./../../../assets/images/workdetails/adventCarendar_End_HD.webp";
 
 
 export type WorkItem = {

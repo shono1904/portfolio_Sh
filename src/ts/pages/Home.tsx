@@ -1,6 +1,6 @@
 import ImageSlider from "../components/ImageSlider";
 import PageCard from "../components/PageCard";
-import { THEME_COLORS } from "./themecolor";
+import { THEME_COLORS } from "../themecolor";
 
 const Home = () => {
   return (

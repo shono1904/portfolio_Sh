@@ -2,11 +2,10 @@ import { Component, Suspense, useEffect, useMemo, useRef } from "react";
 import type { ErrorInfo, ReactNode } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
-import type { AnimationAction } from "three";
+import type { AnimationAction, AnimationClip, Group, Object3D } from "three";
+import modelUrl from "../../../assets/models/kyoka/Kyoka_share1.glb";
 
-// Use public/ path for GLB assets. Place the GLB at `public/assets/models/kyoka/Kyoka_share1.glb`.
-// GLB format is natively supported by Three.js and more stable than FBX.
-const MODEL_PATH = "/assets/models/kyoka/Kyoka_share1.glb";
+const MODEL_PATH = modelUrl;
 
 type ModelErrorBoundaryProps = {
   children: ReactNode;
@@ -25,7 +24,7 @@ class ModelErrorBoundary extends Component<ModelErrorBoundaryProps, ModelErrorBo
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    console.error("FBX load error:", error, errorInfo);
+    console.error("3D model load error:", error, errorInfo);
   }
 
   render() {
@@ -38,7 +37,10 @@ class ModelErrorBoundary extends Component<ModelErrorBoundaryProps, ModelErrorBo
 }
 
 const KyokaModel = () => {
-  const { scene, animations } = useGLTF(MODEL_PATH);
+  const { scene, animations } = useGLTF(MODEL_PATH) as {
+    scene: Group;
+    animations: AnimationClip[];
+  };
   const transitionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   
   // Log GLB load success for debugging
@@ -53,7 +55,7 @@ const KyokaModel = () => {
   const { actions } = useAnimations(animationClips, scene);
 
   useEffect(() => {
-    scene.traverse((node) => {
+    scene.traverse((node: Object3D) => {
       if ("castShadow" in node) {
         node.castShadow = true;
       }
@@ -114,7 +116,7 @@ const Kyoka = () => {
     <div style={{ padding: "8%", marginTop: "60px" }}>
       <h2>Kyoka</h2>
       <hr />
-      <p>Humanoid FBXモデルを表示しています。複数のアニメーションクリップを自動でクロスフェード遷移しながら再生します。</p>
+      <p>Kyoka の 3D モデルを表示しています。アニメーションが含まれている場合は自動で再生します。</p>
 
       <div style={{ height: "520px", borderRadius: "8px", overflow: "hidden", marginTop: "20px" }}>
         <ModelErrorBoundary
@@ -131,7 +133,7 @@ const Kyoka = () => {
                 textAlign: "center",
               }}
             >
-              FBXの読み込みに失敗しました。参照パスを確認してください。
+              3Dモデルの読み込みに失敗しました。参照パスを確認してください。
               <br />
               model: {MODEL_PATH}
             </div>
@@ -139,8 +141,11 @@ const Kyoka = () => {
         >
           <Canvas shadows camera={{ position: [0, 1.4, 3], fov: 40 }}>
             <color attach="background" args={["#0e0f14"]} />
-            <ambientLight intensity={0.4} />
-            <directionalLight position={[3, 5, 2]} intensity={1.2} castShadow />
+            <ambientLight intensity={1.1} />
+            <hemisphereLight intensity={1.2} color="#ffffff" groundColor="#2b2f3a" />
+            <directionalLight position={[3, 5, 2]} intensity={2.2} castShadow />
+            <directionalLight position={[-3, 2, -2]} intensity={0.8} color="#88aaff" />
+            <pointLight position={[0, 2.5, 2.5]} intensity={18} distance={10} color="#ffffff" />
             <Suspense fallback={null}>
               <KyokaModel />
             </Suspense>
@@ -150,7 +155,7 @@ const Kyoka = () => {
       </div>
 
       <p style={{ marginTop: "14px", opacity: 0.8 }}>
-        配置先: public/assets/models/kyoka/Kyoka_share1.glb
+        配置先: src/assets/models/kyoka/Kyoka_share1.glb
       </p>
       <p style={{ marginTop: "8px", opacity: 0.8 }}>
         GLB形式のモデルを表示しています

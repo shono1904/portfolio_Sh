@@ -1,7 +1,6 @@
-// ImageSlider.tsx
 import { useEffect, useState } from "react";
-import Image1 from './HomeImages/adventCarendar_End_FHD.webp'
-import Image2 from './HomeImages/f161fa9239dd7e9b.webp'
+import Image1 from './../../assets/images/home/adventCarendar_End_FHD.webp'
+import Image2 from './../../assets/images/home/f161fa9239dd7e9b.webp'
 
 const images = [Image1, Image2];
 

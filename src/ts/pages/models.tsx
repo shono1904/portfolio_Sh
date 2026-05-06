@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { THEME_COLORS } from "./themecolor";
+import { THEME_COLORS } from "../themecolor";
 
-const publish = false; // 公開フラグ（true: 公開, false: 非公開）
+const publish = true; // 公開フラグ（true: 公開, false: 非公開）
 
 const Models = () => {
   if(publish){

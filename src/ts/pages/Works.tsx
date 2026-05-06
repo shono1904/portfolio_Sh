@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { worksData } from "./WorkDetail/workData";
-import { THEME_COLORS } from "./themecolor";
+import { THEME_COLORS } from "../themecolor";
 
 const Works = () => {
   return (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./cyber.css";
+import "../../css/cyber.css";
 
 const HEADER_HEIGHT = 60;
 const HOME_HEADER_BACKGROUND = "#11112072"; // ホームページのヘッダーバックグラウンド

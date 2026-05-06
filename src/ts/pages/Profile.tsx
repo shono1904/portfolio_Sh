@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import PlofileImg from "./profile.webp";
-import { THEME_COLORS } from "./themecolor";
+import PlofileImg from "./../../assets/images/plofile/plofile.webp";
+import { THEME_COLORS } from "../themecolor";
 import React from "react";
 
 const timeline: React.CSSProperties = {
