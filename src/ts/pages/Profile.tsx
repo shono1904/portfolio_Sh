@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import PlofileImg from "./../../assets/images/plofile/plofile.webp";
 import githubLogo from "../../assets/images/logos/GitHub_Invertocat_Black.svg";
 import xLogo from "../../assets/images/logos/logo-X.svg";
@@ -121,7 +121,7 @@ const xIconStyle: React.CSSProperties = {
 };
 
 const Profile = ({ isDarkTheme }: ProfileProps) => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   return (
     <>
