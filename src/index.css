@@ -7,6 +7,11 @@ body {
   overflow-x: hidden;
 }
 
+body.theme-target-dark {
+  background-color: #0b1018;
+  color: #e7ecf5;
+}
+
 #root {
   min-height: 100vh;
 }
@@ -32,6 +37,12 @@ body::before {
     linear-gradient(90deg, rgba(199, 199, 199, 0) 1px, transparent 1px);
   background-size: 40px 40px;
   z-index: -1;
+}
+
+body.theme-target-dark::before {
+  background-image:
+    linear-gradient(rgba(145, 164, 199, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(145, 164, 199, 0.12) 1px, transparent 1px);
 }
 
 .works-link {

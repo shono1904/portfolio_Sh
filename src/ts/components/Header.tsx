@@ -6,7 +6,13 @@ const HEADER_HEIGHT = 60;
 const HOME_HEADER_BACKGROUND = "#11112072"; // ホームページのヘッダーバックグラウンド
 const DEFAULT_HEADER_BACKGROUND = "#11112072"; // その他のページのヘッダーバックグラウンド
 
-const Header = () => {
+type HeaderProps = {
+  showThemeToggle?: boolean;
+  isDarkTheme?: boolean;
+  onToggleTheme?: () => void;
+};
+
+const Header = ({ showThemeToggle = false, isDarkTheme = true, onToggleTheme }: HeaderProps) => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
@@ -80,9 +86,9 @@ const Header = () => {
          }}>
           <Link to="/" onClick={closeMenu} style={{ color: "white", textDecoration: "none"}}>
           <p style={{fontSize: `${HEADER_HEIGHT * 0.7}px`, display: "inline-block", margin: 0}}>
-            狐っ娘
+            shono-fox
           </p><p style={{fontSize: `${HEADER_HEIGHT * 0.4}px`, display: "inline-block", margin: 0}}>
-            研究室
+            .com
           </p>
           </Link>
         </p>
@@ -99,6 +105,23 @@ const Header = () => {
           <Link to="/profile" onClick={closeMenu}>Profile</Link>
           <Link to="/works" onClick={closeMenu}>Works</Link>
           <Link to="/models" onClick={closeMenu}>Models</Link>
+          {showThemeToggle && onToggleTheme && (
+            <button
+              onClick={onToggleTheme}
+              style={{
+                marginTop: "8px",
+                borderRadius: "999px",
+                border: "1px solid #4f586a",
+                background: isDarkTheme ? "#10141d" : "#f3f5f9",
+                color: isDarkTheme ? "#e7ecf5" : "#1a1f2a",
+                padding: "8px 14px",
+                cursor: "pointer",
+                fontWeight: 700,
+              }}
+            >
+              {isDarkTheme ? "Light Theme" : "Dark Theme"}
+            </button>
+          )}
         </nav>
       </div>
     </>

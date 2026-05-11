@@ -2,18 +2,42 @@ import { Link } from "react-router-dom";
 import { worksData } from "./WorkDetail/workData";
 import { THEME_COLORS } from "../themecolor";
 
-const Works = () => {
+type WorksProps = {
+  isDarkTheme: boolean;
+};
+
+const getPageStyle = (isDarkTheme: boolean): React.CSSProperties => {
+  if (!isDarkTheme) {
+    return {
+      padding: "8%",
+      maxWidth: "900px",
+      margin: "0 auto",
+    };
+  }
+
+  return {
+    padding: "8%",
+    maxWidth: "900px",
+    margin: "0 auto",
+    background: "#10141d",
+    color: "#e7ecf5",
+    borderRadius: "16px",
+    boxShadow: "0 16px 36px rgba(0, 0, 0, 0.28)",
+  };
+};
+
+const Works = ({ isDarkTheme }: WorksProps) => {
   return (
     <>
     <title>Works - Shono.mu</title>
-    <div style={{padding: "8%", maxWidth: `900px`, margin: "0 auto"}} >
+    <div style={getPageStyle(isDarkTheme)}>
       <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>ArtWorks</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　イラスト作品一覧</p>
       <hr style={{border: "none",borderTop: `3px solid ${THEME_COLORS.works}`, margin: "8px 0"}}/>
       <div style={{ display: "flex", gap: "20px" }}>
         {worksData.slice().reverse().map((work) => (
           <Link key={work.id} to={`/works/${work.id}`} className="works-link">
             <img src={work.thumbnail ?? work.image} alt={`${work.title}のサムネイル`} width={200} style={{borderRadius: "15%"}}/>
-            <p style={{color : `${THEME_COLORS.textPrimary}`}}>{work.title}</p>
+            <p style={{color: isDarkTheme ? "#e7ecf5" : THEME_COLORS.textPrimary}}>{work.title}</p>
           </Link>
         ))}
       </div>

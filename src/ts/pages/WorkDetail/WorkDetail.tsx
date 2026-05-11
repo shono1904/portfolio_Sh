@@ -1,13 +1,57 @@
 import { useParams } from "react-router-dom";
 import { worksData } from "./workData";
 
-const WorkDetail = () => {
+type WorkDetailProps = {
+  isDarkTheme: boolean;
+};
+
+const getPageStyle = (isDarkTheme: boolean): React.CSSProperties => {
+  if (!isDarkTheme) {
+    return {
+      marginTop: "60px",
+      padding: "20px",
+      display: "flex",
+      gap: "20px",
+    };
+  }
+
+  return {
+    marginTop: "60px",
+    padding: "24px",
+    display: "flex",
+    gap: "20px",
+    background: "#10141d",
+    color: "#e7ecf5",
+    borderRadius: "16px",
+    boxShadow: "0 16px 36px rgba(0, 0, 0, 0.28)",
+  };
+};
+
+const getNotFoundStyle = (isDarkTheme: boolean): React.CSSProperties => {
+  if (!isDarkTheme) {
+    return {
+      marginTop: "60px",
+      padding: "20px",
+    };
+  }
+
+  return {
+    marginTop: "60px",
+    padding: "24px",
+    background: "#10141d",
+    color: "#e7ecf5",
+    borderRadius: "16px",
+    boxShadow: "0 16px 36px rgba(0, 0, 0, 0.28)",
+  };
+};
+
+const WorkDetail = ({ isDarkTheme }: WorkDetailProps) => {
   const { id } = useParams();
   const work = worksData.find((item) => item.id === id);
 
   if (!work) {
     return (
-      <div style={{ marginTop: "60px", padding: "20px" }}>
+      <div style={getNotFoundStyle(isDarkTheme)}>
         <h2>Work Detail</h2>
         <p>指定された作品は見つかりませんでした。</p>
       </div>
@@ -15,7 +59,7 @@ const WorkDetail = () => {
   }
 
   return (
-    <div style={{  marginTop: "60px", padding: "20px", display: "flex", gap: "20px" }}>
+    <div style={getPageStyle(isDarkTheme)}>
       <div style={{flex:1 , textAlign: "left" }}>
         <h2>作品名:{work.title}</h2>
         <br/>
