@@ -60,6 +60,7 @@ const WorkDetail = ({ isDarkTheme }: WorkDetailProps) => {
 
   return (
     <div style={getPageStyle(isDarkTheme)}>
+      <title>{work.title} - Shono-fox.com</title>
       <div style={{flex:1 , textAlign: "left" }}>
         <h2>作品名:{work.title}</h2>
         <br/>

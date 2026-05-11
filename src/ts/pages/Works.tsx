@@ -29,7 +29,7 @@ const getPageStyle = (isDarkTheme: boolean): React.CSSProperties => {
 const Works = ({ isDarkTheme }: WorksProps) => {
   return (
     <>
-    <title>Works - Shono.mu</title>
+    <title>Works - Shono-fox.com</title>
     <div style={getPageStyle(isDarkTheme)}>
       <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>ArtWorks</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　イラスト作品一覧</p>
       <hr style={{border: "none",borderTop: `3px solid ${THEME_COLORS.works}`, margin: "8px 0"}}/>

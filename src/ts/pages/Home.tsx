@@ -5,7 +5,7 @@ import { THEME_COLORS } from "../themecolor";
 const Home = () => {
   return (
     <>
-    <title>Shono.mu</title>
+    <title>Shono-fox.com</title>
     <div style={{}}>
       <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
         <ImageSlider />

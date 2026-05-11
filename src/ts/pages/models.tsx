@@ -31,7 +31,7 @@ const Models = ({ isDarkTheme }: ModelsProps) => {
   if(publish){
   return (
     <>
-    <title>Models - Shono.mu</title>
+    <title>Models - Shono-fox.com</title>
     <div style={getPageStyle(isDarkTheme)}>
       <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>Models</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　3Dモデル一覧</p>
       <hr style={{border: "none",borderTop: `3px solid ${THEME_COLORS.models}`,}}/>

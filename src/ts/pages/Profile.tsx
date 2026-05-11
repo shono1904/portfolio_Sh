@@ -125,7 +125,7 @@ const Profile = ({ isDarkTheme }: ProfileProps) => {
 
   return (
     <>
-    <title>Profile - Shono.mu</title>
+    <title>Profile - Shono-fox.com</title>
     <div style={getPageStyle(isDarkTheme)}>
       <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>Profile</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　プロフィール</p>
       <hr style={hrstyle}/>
