@@ -54,7 +54,7 @@ const ImageSlider = ({
   };
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden" }}>
+    <div className="image-slider" style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden" }}>
       {/* 現在の画像 */}
       <img
         src={images[index]}
@@ -88,6 +88,7 @@ const ImageSlider = ({
       )}
       {/* ボタンコンテナ */}
       <div
+        className="image-slider-button-container"
         style={{
           position: "absolute",
           right: "20px",
@@ -112,6 +113,7 @@ const ImageSlider = ({
           style={{
             width: "40px",
             height: "40px",
+            padding: "0",
             borderRadius: "50%",
             border: "1px solid #7e7e7e",
             color: "#ffffff",
@@ -145,11 +147,15 @@ const ImageSlider = ({
                 style={{
                   width: "40px",
                   height: "40px",
+                  padding: "0",
                   borderRadius: "50%",
                   border: "1px solid #7e7e7e",
                   color: "#ffffff",
                   cursor: "pointer",
-                  fontSize: "12px"
+                  fontSize: "12px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
                 }}
               >
                 
@@ -164,6 +170,7 @@ const ImageSlider = ({
           style={{
             width: "40px",
             height: "40px",
+            padding: "0",
             borderRadius: "50%",
             border: "1px solid #7e7e7e",
             color: "#ffffff",

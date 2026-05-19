@@ -126,32 +126,34 @@ const Profile = ({ isDarkTheme }: ProfileProps) => {
   return (
     <>
     <title>Profile - Shono-fox.com</title>
-    <div style={getPageStyle(isDarkTheme)}>
-      <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>Profile</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　プロフィール</p>
+    <div className="page-container" style={getPageStyle(isDarkTheme)}>
+      <p className="page-title" style={{fontSize:"36px", display: "inline-block", margin: 0}}>Profile</p><p className="page-subtitle" style={{fontSize:"12px", display: "inline-block", margin: 0}}>　プロフィール</p>
       <hr style={hrstyle}/>
       <span style={{display:"block", height:"30px"}}/>
-      <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
-        <img src={PlofileImg} alt="プロフィール画像" style={{width: "20%", height: "auto", borderRadius: "15%", flexShrink: 0}} />
-        <div>
+      <div className="profile-section" style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
+        <img className="profile-image" src={PlofileImg} alt="プロフィール画像" style={{width: "20%", height: "auto", borderRadius: "15%", flexShrink: 0}} />
+        <div className="profile-info">
           <h2 style={{ margin: 0 }}>しょうの</h2>
-          <div style={socialLinksStyle}>
+          <div className="social-links" style={socialLinksStyle}>
             <a
               href="https://x.com/shono_digic"
               target="_blank"
               rel="noreferrer"
               aria-label="X profile"
+              className="social-link"
               style={getSocialLinkStyle(isDarkTheme)}
             >
-              <img src={xLogo} alt="X" style={xIconStyle} />
+              <img className="social-icon" src={xLogo} alt="X" style={xIconStyle} />
             </a>
             <a
               href="https://github.com/shono1904"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub profile"
+              className="social-link"
               style={getSocialLinkStyle(isDarkTheme)}
             >
-              <img src={githubLogo} alt="GitHub" style={socialIconStyle} />
+              <img className="social-icon" src={githubLogo} alt="GitHub" style={socialIconStyle} />
             </a>
           </div>
           <p>
@@ -167,21 +169,21 @@ const Profile = ({ isDarkTheme }: ProfileProps) => {
       <div style={{flex:1, outline: isDarkTheme ? "1px solid rgba(231, 236, 245, 0.35)" : "2px solid Gray", padding: "0 10px", borderRadius: "16px",}}>
         <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>Career</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　これまで</p>
         <div style={timeline}>
-          <ul style={timelineliststyle}>
-            <div style={getTimelineLineStyle(isDarkTheme)} />
-            <li style={timelineitemstyle}>
-              <span style={getTimelineDotStyle(isDarkTheme)} />
-              <time dateTime="2021-2023" style={getDateTimeStyle(isDarkTheme)}>2021-2023</time>
-              <p style={timelinetitlestyle}>新潟県立新潟高等学校普通科</p>
-              <ul style={timelinetextstyle}>
+          <ul className="timeline-list" style={timelineliststyle}>
+            <div className="timeline-line" style={getTimelineLineStyle(isDarkTheme)} />
+            <li className="timeline-item" style={timelineitemstyle}>
+              <span className="timeline-dot" style={getTimelineDotStyle(isDarkTheme)} />
+              <time className="timeline-date" dateTime="2021-2023" style={getDateTimeStyle(isDarkTheme)}>2021-2023</time>
+              <p className="timeline-title" style={timelinetitlestyle}>新潟県立新潟高等学校普通科</p>
+              <ul className="timeline-text" style={timelinetextstyle}>
                 <li>エッチなゲームの背景にたまに使われている学校</li>
               </ul>
             </li>
-            <li style={timelineitemstyle}>
-              <span style={getTimelineDotStyle(isDarkTheme)} />
-              <time dateTime="2023-現在" style={getDateTimeStyle(isDarkTheme)}>2023-現在</time>
-              <p style={timelinetitlestyle}>芝浦工業大学システム理工学部電子情報システム学科</p>
-              <ul style={timelinetextstyle}>
+            <li className="timeline-item" style={timelineitemstyle}>
+              <span className="timeline-dot" style={getTimelineDotStyle(isDarkTheme)} />
+              <time className="timeline-date" dateTime="2023-現在" style={getDateTimeStyle(isDarkTheme)}>2023-現在</time>
+              <p className="timeline-title" style={timelinetitlestyle}>芝浦工業大学システム理工学部電子情報システム学科</p>
+              <ul className="timeline-text" style={timelinetextstyle}>
                 <li>パソコンを触り始める</li>
                 <li>デジクリに入部</li>
               </ul>

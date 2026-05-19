@@ -30,10 +30,10 @@ const Works = ({ isDarkTheme }: WorksProps) => {
   return (
     <>
     <title>Works - Shono-fox.com</title>
-    <div style={getPageStyle(isDarkTheme)}>
-      <p style={{fontSize:"36px", display: "inline-block", margin: 0}}>ArtWorks</p><p style={{fontSize:"12px", display: "inline-block", margin: 0}}>　イラスト作品一覧</p>
+    <div className="page-container" style={getPageStyle(isDarkTheme)}>
+      <p className="page-title" style={{fontSize:"36px", display: "inline-block", margin: 0}}>ArtWorks</p><p className="page-subtitle" style={{fontSize:"12px", display: "inline-block", margin: 0}}>　イラスト作品一覧</p>
       <hr style={{border: "none",borderTop: `3px solid ${THEME_COLORS.works}`, margin: "8px 0"}}/>
-      <div style={{ display: "flex", gap: "20px" }}>
+      <div className="works-gallery" style={{ display: "flex", gap: "20px" }}>
         {worksData.slice().reverse().map((work) => (
           <Link key={work.id} to={`/works/${work.id}`} className="works-link">
             <img src={work.thumbnail ?? work.image} alt={`${work.title}のサムネイル`} width={200} style={{borderRadius: "15%"}}/>

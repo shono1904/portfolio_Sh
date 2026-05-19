@@ -6,24 +6,26 @@ const Footer = () => {
   return (
     <footer style={footerStyle}>
       <br/>
-      <div style={linkGroupStyle}>
+      <div className="social-links" style={linkGroupStyle}>
         <a
           href="https://x.com/shono_digic"
           target="_blank"
           rel="noreferrer"
           aria-label="X profile"
+          className="social-link"
           style={iconLinkStyle}
         >
-          <img src={xLogo} alt="X" style={iconStyle} />
+          <img className="social-icon" src={xLogo} alt="X" style={iconStyle} />
         </a>
         <a
           href="https://github.com/shono-digic"
           target="_blank"
           rel="noreferrer"
           aria-label="GitHub profile"
+          className="social-link"
           style={iconLinkStyle}
         >
-          <img src={githubLogo} alt="GitHub" style={iconStyle} />
+          <img className="social-icon" src={githubLogo} alt="GitHub" style={iconStyle} />
         </a>
       </div>
       <hr style={{backgroundColor: "#ffffff", width: "90%"}}/>

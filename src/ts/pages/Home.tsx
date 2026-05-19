@@ -7,9 +7,10 @@ const Home = () => {
     <>
     <title>Shono-fox.com</title>
     <div style={{}}>
-      <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+      <div className="home-container" style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
         <ImageSlider />
         <div
+          className="home-card-container"
           style={{
             position: "absolute",
             top: window.innerHeight * (2/3)-10,
@@ -25,6 +26,7 @@ const Home = () => {
           }}
         >
           <div
+            className="home-card"
             style={{
               flex: "1 1 220px",
               maxWidth: "360px",
@@ -38,12 +40,13 @@ const Home = () => {
           >
             <PageCard
               title="Profile"
-              description="しょうののプロフィール、経歴、その他情報を見てみる"
+              description="しょうののプロフィール、経歴、その他情報"
               link="/profile"
               color={THEME_COLORS.profile}
             />
           </div>
           <div
+            className="home-card"
             style={{
               flex: "1 1 220px",
               maxWidth: "360px",
@@ -57,12 +60,13 @@ const Home = () => {
           >
             <PageCard
               title="Works"
-              description="これまでに制作した作品やプロジェクトについて見てみる"
+              description="これまでに制作した作品やプロジェクト"
               link="/works"
               color={THEME_COLORS.works}
             />
           </div>
           <div
+            className="home-card"
             style={{
               flex: "1 1 220px",
               maxWidth: "360px",
@@ -76,13 +80,14 @@ const Home = () => {
           >
             <PageCard
               title="Models"
-              description="これまでに制作された3Dモデルを見てみる"
+              description="これまでに制作された3Dモデル"
               link="/models"
               color={THEME_COLORS.models}
             />
           </div>
         </div>
         <h1
+          className="home-title"
           style={{
             fontSize: "48px",
             position: "absolute",

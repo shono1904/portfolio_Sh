@@ -1,0 +1,569 @@
+/* ============================================ */
+/* モバイル対応スタイル（768px以下） */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  /* === 基本設定 === */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* === グリッド背景調整 === */
+  body::before {
+    background-size: 20px 20px;
+  }
+
+  /* === ヘッダー調整 === */
+  .cyber-header {
+    height: 50px !important;
+    padding: 0 12px !important;
+  }
+
+  .cyber-header p {
+    font-size: 14px !important;
+    margin-left: 12px !important;
+  }
+
+  .neon-text p {
+    font-size: 16px !important;
+  }
+
+  .cyber-menu-btn {
+    font-size: 150% !important;
+  }
+
+  /* === ホームページ調整 === */
+  .home-container {
+    height: 100vh;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .home-card-container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .home-container {
+    height: 100vh;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .home-card-container {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 4% !important;
+    height: auto !important;
+    max-height: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .home-card {
+    flex: 1 1 auto !important;
+    max-width: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  .home-title {
+    font-size: 32px !important;
+    left: 50% !important;
+    top: 25% !important;
+  }
+
+  /* === プロフィール/ワークスページ調整 === */
+  .page-container {
+    padding: 4% !important;
+    max-width: 100% !important;
+    margin-top: 50px !important;
+  }
+
+  .page-title {
+    font-size: 24px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .page-subtitle {
+    font-size: 10px !important;
+  }
+
+  .profile-section {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    align-items: center !important;
+  }
+
+  .profile-image {
+    width: 40% !important;
+    max-width: 150px !important;
+  }
+
+  .profile-info {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* === タイムライン調整 === */
+  .timeline-list {
+    padding: 0 0 0 16px !important;
+  }
+
+  .timeline-line {
+    left: 6px !important;
+  }
+
+  .timeline-dot {
+    left: -14px !important;
+  }
+
+  .timeline-item {
+    padding: 0 0 12px 0 !important;
+  }
+
+  .timeline-date {
+    font-size: 11px !important;
+  }
+
+  .timeline-title {
+    font-size: 13px !important;
+  }
+
+  .timeline-text {
+    font-size: 12px !important;
+  }
+
+  /* === ワークスギャラリー調整 === */
+  .works-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .works-link {
+    text-decoration: none;
+  }
+
+  .works-link img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+  }
+
+  .works-link p {
+    font-size: 12px !important;
+    margin: 8px 0 !important;
+  }
+
+  /* === 社会リンク調整 === */
+  .social-links {
+    gap: 12px !important;
+    justify-content: center !important;
+  }
+
+  .social-link {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .social-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* === フッター調整 === */
+  footer {
+    padding: 16px !important;
+    gap: 12px !important;
+  }
+
+  footer hr {
+    width: 95% !important;
+  }
+
+  footer p {
+    font-size: 12px !important;
+    margin: 0 !important;
+  }
+
+  /* === ページカード調整 === */
+  .page-card-container {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .page-card-header h3 {
+    font-size: 14px !important;
+    margin: 0 !important;
+  }
+
+  .page-card-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    gap: 8px !important;
+    flex: 1 !important;
+  }
+
+  .page-card h3 {
+    font-size: 14px !important;
+  }
+
+  .page-card p {
+    font-size: 12px !important;
+    margin: 0 !important;
+    flex: 1 !important;
+  }
+
+  .page-card-link {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* === イメージスライダー調整 === */
+  .image-slider {
+    border-radius: 8px !important;
+  }
+
+  .image-slider img {
+    height: 100vh !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .image-slider-button-container {
+    top: 25vh !important;
+    transform: translateY(0) !important;
+    right: 12px !important;
+  }
+
+  .image-slider-button {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    margin: 0 !important;
+  }
+
+  /* === リスト/ギャラリー調整 === */
+  .flex-row {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .flex-column {
+    flex-direction: column !important;
+  }
+
+  /* === テキストサイズ調整 === */
+  h1 {
+    font-size: 28px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  h3 {
+    font-size: 16px !important;
+  }
+
+  h4, h5, h6 {
+    font-size: 14px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+
+  /* === スペーシング調整 === */
+  .spacing-large {
+    margin: 12px 0 !important;
+    padding: 12px !important;
+  }
+
+  .spacing-medium {
+    margin: 8px 0 !important;
+    padding: 8px !important;
+  }
+
+  .spacing-small {
+    margin: 4px 0 !important;
+    padding: 4px !important;
+  }
+
+  /* === ボタン調整 === */
+  button {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+
+  a {
+    font-size: 14px !important;
+  }
+
+  /* === 画像調整 === */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* === オーバーレイ調整 === */
+  .overlay {
+    top: 50px !important;
+    height: calc(100vh - 50px) !important;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .cyber-sidebar {
+    max-width: 200px !important;
+    width: 200px !important;
+  }
+}
+
+/* ============================================ */
+/* 超小型スマホ対応（480px以下） */
+/* ============================================ */
+
+@media (max-width: 480px) {
+  /* === 基本設定 === */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* === ヘッダー調整 === */
+  .cyber-header {
+    height: 45px !important;
+  }
+
+  .cyber-header p {
+    font-size: 12px !important;
+  }
+
+  .neon-text p {
+    font-size: 14px !important;
+  }
+
+  /* === ページコンテナ調整 === */
+  .page-container {
+    padding: 3% !important;
+    margin-top: 50px !important;
+  }
+
+  .page-title {
+    font-size: 20px !important;
+  }
+
+  .page-subtitle {
+    font-size: 9px !important;
+  }
+
+  /* === ホームカード調整 === */
+  .home-card {
+    padding: 12px !important;
+  }
+
+  .home-title {
+    font-size: 24px !important;
+  }
+
+  /* === フォントサイズ調整 === */
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 16px !important;
+  }
+
+  h3 {
+    font-size: 14px !important;
+  }
+
+  p {
+    font-size: 12px !important;
+  }
+
+  /* === ギャラリー調整 === */
+  .works-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .works-link p {
+    font-size: 10px !important;
+  }
+
+  /* === プロフィール画像調整 === */
+  .profile-image {
+    width: 50% !important;
+  }
+
+  /* === タイムライン調整 === */
+  .timeline-list {
+    padding: 0 0 0 12px !important;
+  }
+
+  .timeline-date {
+    font-size: 10px !important;
+  }
+
+  .timeline-title {
+    font-size: 12px !important;
+  }
+
+  .timeline-text {
+    font-size: 11px !important;
+  }
+
+  /* === ボタン調整 === */
+  button {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+
+  /* === ページカード調整 === */
+  .page-card-container {
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  .page-card-header h3 {
+    font-size: 12px !important;
+    margin: 0 !important;
+  }
+
+  .page-card-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    gap: 6px !important;
+  }
+
+  .page-card h3 {
+    font-size: 12px !important;
+  }
+
+  .page-card p {
+    font-size: 11px !important;
+    flex: 1 !important;
+  }
+
+  .page-card-link {
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* === ImageSliderボタンコンテナ調整 === */
+  .image-slider-button-container {
+    top: 25vh !important;
+    right: 8px !important;
+  }
+
+  .image-slider img {
+    height: 100vh !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  /* === 社会リンク調整 === */
+  .social-links {
+    gap: 10px !important;
+    justify-content: center !important;
+  }
+
+  .social-link {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .social-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* === スペーシング調整 === */
+  .spacing-large {
+    margin: 8px 0 !important;
+    padding: 8px !important;
+  }
+
+  .spacing-medium {
+    margin: 4px 0 !important;
+    padding: 4px !important;
+  }
+
+  /* === パディング調整 === */
+  .card-container {
+    padding: 8px !important;
+    gap: 8px !important;
+  }
+}
+
+/* ============================================ */
+/* タブレット対応（769px～1024px） */
+/* ============================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* === 基本設定 === */
+  * {
+    box-sizing: border-box !important;
+  }
+
+  html, body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .page-container {
+    padding: 6% !important;
+    max-width: 95% !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+  }
+
+  .home-card-container {
+    gap: 16px !important;
+  }
+
+  .works-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .profile-image {
+    width: 30% !important;
+  }
+
+  h1 {
+    font-size: 36px !important;
+  }
+
+  h2 {
+    font-size: 24px !important;
+  }
+
+  .page-title {
+    font-size: 28px !important;
+  }
+}
